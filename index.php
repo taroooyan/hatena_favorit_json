@@ -2,10 +2,12 @@
     # require Goutte
     require_once './vendor/autoload.php';
 
-    $name = $_SERVER["REQUEST_URI"];
+    if(isset($_GET['id'])){
+        $name = $_GET['id'];
+    }
 
     # show home
-    if($name == '/'){
+    if(empty($name)){
         echo file_get_contents('home.html');
         exit();
     }
