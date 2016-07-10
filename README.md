@@ -11,6 +11,8 @@ Response to JSON of user lists from Hatebu(b.hatena.ne.jp/)
 'php composer.phar install'
 
 ## Usage
+Access to
+'/?id=userid' then response to JSON.
 ### Format
 ```
 [
