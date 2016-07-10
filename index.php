@@ -2,8 +2,10 @@
     # require Goutte
     require_once './vendor/autoload.php';
 
+    $name = $_SERVER["REQUEST_URI"];
+
     $client = new Goutte\Client();
-    $html = $client->request('GET', 'http://b.hatena.ne.jp/taroooyan/follow');
+    $html = $client->request('GET', 'http://b.hatena.ne.jp/' . $name . '/follow');
 
     // 抽出
     $users = [];
