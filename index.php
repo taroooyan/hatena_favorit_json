@@ -4,6 +4,12 @@
 
     $name = $_SERVER["REQUEST_URI"];
 
+    # show home
+    if($name == '/'){
+        echo "<h1>HOME</h1>";
+        exit();
+    }
+
     $client = new Goutte\Client();
     $html = $client->request('GET', 'http://b.hatena.ne.jp/' . $name . '/follow');
 
