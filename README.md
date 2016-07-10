@@ -1,7 +1,7 @@
-Get favorit users of Hatena 
+Get favorite users of Hatena bookmark
 ====
 ## Description
-Response to JSON user lists from Hatebu(b.hatena.ne.jp/)
+Response to JSON of user lists from Hatebu(b.hatena.ne.jp/)
 
 ## Requirement
 - PHP 5.6
