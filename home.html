@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Get favorite users from Hatebu</title>
+  </head>
+  <body>
+    <h2> 概要 </h2>
+    はてなブックマークのお気に入りユーザを利用しようとした際に公式のAPIでは提供されていないと思われるため、あるユーザのお気に入りのユーザリストJSON形式で返すものを作成
+    <h2> 使い方 </h2>
+    '/はてなブックマークのユーザ名' にアクセスすることで取得できる。
+    <pre>
+    <h2> フォーマット </h2>
+    [
+        {
+            "profile-image": "http://cdn1.www.st-hatena.com/users/******1/profile_l.gif",
+            "username": "*****1"
+        }, 
+        {
+            "profile-image": "http://cdn1.www.st-hatena.com/users/******2/profile_l.gif",
+            "username": "*****2"
+        }
+    ]
+    </pre>
+    
+    <a href="https://github.com/taroooyan/hatena_favorit_json">GitHub</a>
+  </body>
+</html>

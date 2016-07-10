@@ -6,7 +6,7 @@
 
     # show home
     if($name == '/'){
-        echo "<h1>HOME</h1>";
+        echo file_get_contents('home.html');
         exit();
     }
 
