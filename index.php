@@ -1,18 +1,29 @@
 <?php
-    // first.php
+    # require Goutte
     require_once './vendor/autoload.php';
 
     $client = new Goutte\Client();
-    $crawler = $client->request('GET', 'http://profile.hatena.ne.jp/taroooyan/favorites?location=http%3A%2F%2Fprofile.hatena.ne.jp%2Ftaroooyan%2Fprofile');
+    $html = $client->request('GET', 'http://b.hatena.ne.jp/taroooyan/follow');
 
     // 抽出
+    $users = [];
+
+    # image profile  url
     $count = 0;
-    $crawler->filter('ul.fanlist')->each(function ($ulist){
-        // echo $ulist->a() . "<br>";
-        $ulist->filter('span.username')->each(function ($user){
-            echo $user->text() . "<br>";
-        });
-        $ulist->filter('span.nickname')->each(function ($user){
-            echo $user->text() . "<br>";
-        });
+    $html->filter('div.profile-image img')->each(function ($ulist) use (&$count, &$users){
+        $users[$count]['profile-image'] = $ulist->attr('src');
+        $count += 1;
     });
+
+    # username
+    $count = 0;
+    $html->filter('a.username')->each(function ($ulist) use (&$count, &$users){
+        $username = $ulist->text();
+        $users[$count]['username'] = $username;
+        $count += 1;
+    });
+
+    $json = json_encode($users);
+    // 出力
+    echo $json;
+
