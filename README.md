@@ -26,3 +26,5 @@ Access to
     }
 ]
 ```
+### Demo
+`http://hatena-favorite.taroooyan.com/`
