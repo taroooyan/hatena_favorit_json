@@ -8,11 +8,11 @@ Response to JSON of user lists from Hatebu(b.hatena.ne.jp/)
 - Goutte
 
 ## Install
-'php composer.phar install'
+`php composer.phar install`
 
 ## Usage
 Access to
-'/?id=userid' then response to JSON.
+`/?id=userid` then response to JSON.
 ### Format
 ```
 [
@@ -26,4 +26,3 @@ Access to
     }
 ]
 ```
-### Run Server
